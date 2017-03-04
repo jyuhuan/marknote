@@ -36,13 +36,13 @@ function createWindow () {
 
   const noteWindow = new BrowserWindow({
     title: "New Note 1",
-    width: 600,
-    height: 200,
+    width: 400,
+    height: 300,
     titleBarStyle: 'hidden',
     
   })
 
-  noteWindow.webContents.openDevTools()
+  //noteWindow.webContents.openDevTools()
 
   noteWindow.loadURL('file://' + __dirname + "/views/note/note.html")
   
