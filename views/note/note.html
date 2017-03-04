@@ -23,20 +23,32 @@
       <div id="body">
 
         <div id="note-editor">
-          <textarea id="textarea">
-Read about factor graph models $P(\mathbf{y} \mid \mathbf{x})$
+          <textarea id="textarea">## Today
+
+Read about factor graph models $P(\mathbf{y} \mid \mathbf{x})$. Focus on the following topics: 
+
+- __Belief propagation__: How to ensure efficient BP in the presence of global factors.
+- __Bethe free energy__: How to use Bethe free energy $E_{\mathit{bethe}}(b)$ to approximate the partition function.
+- __Likelihood__: $\mathcal{L}(D)$ 
+
+Add this code to my library:
+
 ```scala
 case class Expr(name: String)
-```
-          </textarea>
+```</textarea>
         </div>
 
         <div id="note-previewer">
-            <p>Read about factor graph models $P(\mathbf{y} \mid \mathbf{x})$</p>
-            <p>Read about factor graph models $P(\mathbf{y} \mid \mathbf{x})$</p>
-            <p>Read about factor graph models $P(\mathbf{y} \mid \mathbf{x})$</p>
-            <pre><code class="java">case class Expr(name: String)</code></pre>
-        </div>
+<h2 id="today">Today</h2>
+<p>Read about factor graph models $P(\mathbf{y} \mid \mathbf{x})$. Focus on the following topics: </p>
+<ul>
+<li><strong>Belief propagation</strong>: How to ensure efficient BP in the presence of global factors.</li>
+<li><strong>Bethe free energy</strong>: How to use Bethe free energy $E_{\mathit{bethe}}(b)$ to approximate the partition function.</li>
+<li><strong>Likelihood</strong>: $\mathcal{L}(D)$ </li>
+</ul>
+<p>Add this code to my library:</p>
+<pre><code class="lang-scala">case class Expr(name: String)
+</code></pre>
 
       </div>
     </div>
@@ -53,15 +65,14 @@ case class Expr(name: String)
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
       tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
-      TeX: { equationNumbers: {autoNumber: "all"} }
+      TeX: { equationNumbers: {autoNumber: "all"} },
+      messageStyle: "none"
     });
     </script>
     <script type="text/javascript" async
       src="../../external/MathJax-2.7.0/MathJax.js?config=TeX-AMS_HTML">
     </script>
 
-    <!--<script src="./highlight.js/highlight.pack.js"></script>-->
-    <!--<script>hljs.initHighlightingOnLoad();</script>-->
     <script src="./note.js" ></script>
     
     <!-- Insert this line after script imports -->

@@ -70,7 +70,24 @@ body {
   padding: 5px 0;
 }
 
+p {
+  margin: 5px 0 5px 0;
+}
 
+.hljs {
+  background: transparent;
+  padding: 0 10px;
+}
+
+pre {
+  margin: 0;
+}
+
+h2 {
+  margin: 5px 0 5px 0;
+}
+
+ul { padding: 0 0 0 23px; }
 
 /* EDIT MODE */
 #note-editor {
@@ -92,10 +109,3 @@ body {
 textarea, input, button { outline: none; resize: none; }
 
 
-.hljs {
-  background: transparent;
-}
-
-pre {
-  margin: 0;
-}
