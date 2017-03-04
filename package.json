@@ -1,0 +1,23 @@
+{
+  "name": "marknote",
+  "version": "0.0.0",
+  "description": "A Markdown sticker-style note app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "markdown",
+    "notes",
+    "stickers"
+  ],
+  "author": "Yuhuan Jiang <i@yuhuan.me>",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^1.4.1"
+  },
+  "dependencies": {
+    "highlight.js": "^9.9.0"
+  }
+}
