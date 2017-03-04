@@ -2,7 +2,7 @@
 
 ## Building
 
-Make sure `pwd` equals this repository.
+Make sure `pwd` equals this repository. Then execute:
 
 
 ```bash
