@@ -16,5 +16,10 @@
   "license": "MIT",
   "devDependencies": {
     "electron": "^1.4.1"
+  },
+  "dependencies": {
+    "highlight.js": "^9.9.0",
+    "jquery": "^3.1.1",
+    "marked": "^0.3.6"
   }
 }
