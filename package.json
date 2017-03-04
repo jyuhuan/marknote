@@ -6,7 +6,7 @@
   "scripts": {
     "start": "electron ."
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "https://github.com/jyuhuan/marknote",
   "keywords": [
     "markdown",
     "notes",
@@ -16,8 +16,5 @@
   "license": "MIT",
   "devDependencies": {
     "electron": "^1.4.1"
-  },
-  "dependencies": {
-    "highlight.js": "^9.9.0"
   }
 }
