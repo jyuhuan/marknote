@@ -2,7 +2,7 @@
   "name": "marknote",
   "version": "0.0.0",
   "description": "A Markdown sticker-style note app",
-  "main": "main.js",
+  "main": "./src/main.js",
   "scripts": {
     "start": "electron .",
     "rebuild": "electron-rebuild -f -w sqlite"
@@ -20,9 +20,9 @@
     "electron-rebuild": "1.5.7"
   },
   "dependencies": {
-    "highlight.js": "^9.9.0",
-    "jquery": "^3.1.1",
-    "marked": "^0.3.6",
-    "sqlite3": "^3.1.8"
+    "highlight.js": "9.9.0",
+    "jquery": "3.1.1",
+    "marked": "0.3.6",
+    "sqlite3": "3.1.8"
   }
 }
