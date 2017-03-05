@@ -7,6 +7,7 @@ Make sure `pwd` equals this repository. Then execute:
 
 ```bash
 npm install
+npm run rebuild
 ```
 
 There are two external packages that need to be downloaded manually. Create the following directory 
