@@ -16,9 +16,9 @@ body {
   text-align: center;
   height: 23px;
   line-height: 23px;
-  background: #FFEB3B;
+  background: #FFF59D;
   color: black;
-  -webkit-user-select: none;
+  user-select: none;
   -webkit-app-region: drag
 }
 
@@ -63,7 +63,7 @@ body {
 /* PREVIEW MODE */
 
 #note-previewer {
-  padding: 20px;
+  padding: 10px;
   flex-grow: 200;
   display: flex;
   flex-direction: column;

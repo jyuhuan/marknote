@@ -4,53 +4,29 @@
   <head>
     <meta charset="utf-8" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../../node_modules/highlight.js/styles/default.css">
+    <link rel="stylesheet" type="text/css" href="../../../node_modules/highlight.js/styles/default.css">
     <link rel="stylesheet" type="text/css" href="./note.css">
-    <link rel="stylesheet" href="../../external/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../external/font-awesome-4.7.0/css/font-awesome.min.css">
   </head>
   <body>
 
     <div id="window">
       <div id="title">
-        <span id="text">My first note</span>
+        <!--<span id="text">My first note</span>-->
         <div id="toolbar">
           <a class="button" id="btn-edit" href="#"><i class="fa fa-pencil-square" aria-hidden="true"></i></a>
           <a class="button" href="#"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
-          <a class="button" href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
-          <a class="button" href="#"><i class="fa fa-minus-circle" aria-hidden="true"></i></a>
+          <a class="button" id="btn-add" href="#"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+          <a class="button" id="btn-delete" href="#"><i class="fa fa-minus-circle" aria-hidden="true"></i></a>
         </div>
       </div>
       <div id="body">
 
         <div id="note-editor">
-          <textarea id="textarea">## Today
-
-Read about factor graph models $P(\mathbf{y} \mid \mathbf{x})$. Focus on the following topics: 
-
-- __Belief propagation__: How to ensure efficient BP in the presence of global factors.
-- __Bethe free energy__: How to use Bethe free energy $E_{\mathit{bethe}}(b)$ to approximate the partition function.
-- __Likelihood__: $\mathcal{L}(D)$ 
-
-Add this code to my library:
-
-```scala
-case class Expr(name: String)
-```</textarea>
+          <textarea id="textarea"></textarea>
         </div>
 
-        <div id="note-previewer">
-<h2 id="today">Today</h2>
-<p>Read about factor graph models $P(\mathbf{y} \mid \mathbf{x})$. Focus on the following topics: </p>
-<ul>
-<li><strong>Belief propagation</strong>: How to ensure efficient BP in the presence of global factors.</li>
-<li><strong>Bethe free energy</strong>: How to use Bethe free energy $E_{\mathit{bethe}}(b)$ to approximate the partition function.</li>
-<li><strong>Likelihood</strong>: $\mathcal{L}(D)$ </li>
-</ul>
-<p>Add this code to my library:</p>
-<pre><code class="lang-scala">case class Expr(name: String)
-</code></pre>
-
-      </div>
+        <div id="note-previewer"></div>
     </div>
 
 
@@ -65,12 +41,12 @@ case class Expr(name: String)
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
       tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},
-      TeX: { equationNumbers: {autoNumber: "all"} },
+      <!--TeX: { equationNumbers: {autoNumber: "all"} },-->
       messageStyle: "none"
     });
     </script>
     <script type="text/javascript" async
-      src="../../external/MathJax-2.7.0/MathJax.js?config=TeX-AMS_HTML">
+      src="../../../external/MathJax-2.7.0/MathJax.js?config=TeX-AMS_HTML">
     </script>
 
     <script src="./note.js" ></script>

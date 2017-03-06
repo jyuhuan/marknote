@@ -1,8 +1,10 @@
-const electron = require('electron')
+const electron  = require('electron')
 // Module to control application life.
 const app = electron.app
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
+
+const {ipcMain} = require('electron')
 
 console.log(__dirname)
 console.log(__filename)
@@ -38,27 +40,85 @@ function createWindow () {
     mainWindow = null
   })
 
+}
 
+
+
+/**
+ * A mapping from noteId to {note, noteWindow}
+ */
+const noteWindows = new Map();
+
+function createNoteWindow({note, isNew}) {
   const noteWindow = new BrowserWindow({
-    title: "New Note 1",
     width: 400,
     height: 300,
-    titleBarStyle: 'hidden',
-    
+    titleBarStyle: 'hidden'
+  })
+
+  noteWindows.set(note.id, {
+    note: note,
+    noteWindow: noteWindow
   })
 
   //noteWindow.webContents.openDevTools()
-
   noteWindow.loadURL('file://' + __dirname + "/views/note/note.html")
+  noteWindow.webContents.on('did-finish-load', () => {
+    noteWindow.webContents.send('note-content', {note: note, isNew: isNew})
+  })
   
-
-
 }
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.on('ready', createWindow)
+app.on('ready', () => {
+
+  const {Library, Note} = require('./Library')
+
+  const lib = new Library('./db.sqlite')
+
+  lib.getUndoneNotes().then((notes) => {
+    notes.forEach(note => {
+      // Show the note
+      createNoteWindow({note: note, isNew: false})
+    })
+  })
+
+  ipcMain.on('note-action:save', (e, note) => {
+    lib.updateNote({
+      id: note.id,
+      title: note.title,
+      body: note.body,
+      dateDue: note.dateDue
+    })
+  })
+
+  ipcMain.on('note-action:create', (e, arg) => {
+    const n = {
+      title: "",
+      body: "",
+      dateCreated: 0,
+      dateDue: 0
+    }
+    lib.addNote(n).then((newId) => {
+      n.id = newId
+      createNoteWindow({note: n, isNew: true})
+    })
+  })
+
+  ipcMain.on('note-action:delete', (e, id) => {
+    lib.deleteNote(id).then(() => {
+      e.sender.send('note-action-result:delete', 'success')
+    })
+  })
+
+
+  ipcMain.on('note-action:size-position-update', (e, arg) => {
+    lib.updateNoteGui(arg)
+  })
+
+})
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {
@@ -81,14 +141,5 @@ app.on('activate', function () {
 // code. You can also put them in separate files and require them here.
 
 
-const {Library, Note} = require('./Library')
-
-const lib = new Library('./db.sqlite')
-
-lib.addNote({
-  title: "Test title", 
-  body: "## test body", 
-  dateCreated: 123
-})
 
 
