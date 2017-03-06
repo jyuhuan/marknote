@@ -14,23 +14,56 @@ body {
 
 #window > #title {
   text-align: center;
-  height: 23px;
-  line-height: 23px;
-  background: #FFF59D;
+  height: 20px;
+  line-height: 20px;
+  background: transparent;
+  /*background: #FFEB3B;*/
   color: black;
-  user-select: none;
+  -webkit-user-select: none;
   -webkit-app-region: drag
 }
 
-#window > #title > #toolbar {
+
+
+#window > #title > .toolbar {
+  display: flex;
+  flex-direction: row;
+  height: 20px;
+  align-items: center;
+  padding: 0 5px;
+  transition: color 0.3s;
+  color: rgba(0,0,0,0.2);
+}
+
+#window > #title > .toolbar:hover {
+  color: rgba(0,0,0,0.4);
+}
+
+.toolbar > .button {
+  text-decoration: none;
+  color: inherit;
+  margin: 0 0 0 4px ;
+  -webkit-app-region: no-drag;
+}
+
+.toolbar > .button:hover {
+  color: #444;
+}
+
+.toolbar > .button:active {
+  color: #888;
+}
+
+#window > #title > .left.toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#window > #title > .right.toolbar {
   position: absolute;
   top: 0;
   right: 0;
-  display: flex;
-  flex-direction: row;
-  height: 23px;
-  align-items: center;
-  padding: 0 5px;
 }
 
 #window > #body {
@@ -42,20 +75,6 @@ body {
 }
 
 
-
-#toolbar > .button {
-  text-decoration: none;
-  color: #000;
-  margin: 0 0 0 4px ;
-}
-
-#toolbar > .button:hover {
-  color: #444;
-}
-
-#toolbar > .button:active {
-  color: #888;
-}
 
 
 
@@ -71,7 +90,7 @@ body {
 }
 
 p {
-  margin: 5px 0 5px 0;
+  margin: 0 0 5px 0;
 }
 
 .hljs {
@@ -85,10 +104,14 @@ pre {
 }
 
 h2 {
-  margin: 5px 0 5px 0;
+  margin: 0px 0 5px 0;
+  padding: 0;
 }
 
-ul { padding: 0 0 0 23px; }
+ul { 
+  padding: 0 0 0 23px; 
+  margin: 0;
+}
 
 /* EDIT MODE */
 #note-editor {
@@ -102,11 +125,13 @@ ul { padding: 0 0 0 23px; }
   box-sizing: border-box;
   background: transparent;
   border: 0;
-  padding: 10px;
+  padding: 0 20px;
   font-family: 'Fira Code', 'Fira Mono', monospace;
   font-variant-ligatures: normal;
+  font-size: 1em;
 }
 
-textarea, input, button { outline: none; resize: none; }
-
-
+textarea, input, button { 
+  outline: none; 
+  resize: none; 
+}

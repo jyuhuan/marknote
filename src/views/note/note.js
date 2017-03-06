@@ -29,7 +29,7 @@ $(() => {
 
   const notePreviewerCss = {
     visible: {
-      'padding': '0 10px 10px 10px',
+      'padding': '0 20px 10px 20px',
       'flex-grow': 200,
       'display': 'flex',
       'flex-direction': 'column'
@@ -41,10 +41,10 @@ $(() => {
 
   const editButtonCss = {
     editing: {
-      'color': 'gray'
+      'color': '#F44336'
     },
     previewing: {
-      'color': 'black'
+      'color': 'inherit'
     }
   }
 
@@ -150,7 +150,7 @@ $(() => {
     })
   }
   
-  remote.getCurrentWindow().on('close', function() { //   <---- Catch close event
+  remote.getCurrentWindow().on('close', function() {
     
   });
 

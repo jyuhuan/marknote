@@ -51,9 +51,9 @@ const noteWindows = new Map();
 
 function createNoteWindow({note, isNew}) {
   const noteWindow = new BrowserWindow({
-    width: 400,
-    height: 300,
-    titleBarStyle: 'hidden'
+    width: 300,
+    height: 200,
+    frame: false
   })
 
   noteWindows.set(note.id, {
@@ -104,7 +104,7 @@ app.on('ready', () => {
     lib.addNote(n).then((newId) => {
       n.id = newId
       createNoteWindow({note: n, isNew: true})
-    })
+    }, (err) => console.log(err))
   })
 
   ipcMain.on('note-action:delete', (e, id) => {

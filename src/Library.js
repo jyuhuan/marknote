@@ -19,7 +19,7 @@ module.exports.Library = class Library {
       let dateDueFormatted = 'null'
       if (dateDue) dateDueFormatted = dateDue
 
-      const stmt = `insert into notes(title, body, date_created, date_due, not_done) values("${title}", "${body}", "${dateCreated}", "${dateDueFormatted}", 1)`
+      const stmt = `insert into notes(title, body, date_created, date_due, not_done) values("${title}", "${body}", "${dateCreated}", "${dateDueFormatted}", 1); insert into notesgui(note_id, x, y,height,width) values(last_insert_rowid(), 0,0,100,100)`
 
       this.db.run(stmt, function (err) {
         if (err) reject(`Database error: ${err}`)
